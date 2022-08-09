@@ -4,18 +4,108 @@
   margin: 0;
 }
 
-.App {
-  font-family: 'Poppins', sans-serif;
-}
-
-.App-header {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
+.App-content {
   padding: 50px 5%;
+  font-family: 'Poppins', sans-serif;
 }
 
 .App-title {
   text-align: center;
-  font-weight: 700;
-  font-size: 30px;
+}
+
+.todo-content {
+  width: 80%;
+  margin: auto auto;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  margin: auto;
+}
+
+form input {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 3px solid black;
+  margin-top: 40px;
+}
+
+form input:focus {
+  outline: none;
+  border: 3px solid blue;
+}
+
+.todo-item {
+  display: flex;
+  background-color: rgb(211, 206, 206);
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  align-self: center;
+  border-bottom: 2px solid gray;
+}
+
+.todo-list {
+  width: 100%;
+  margin: 0 auto;
+}
+
+textarea {
+  font-size: 23px;
+  font-weight: 500;
+  height: 30px;
+  padding: 0 20px 0 10px;
+  background-color: lightgray;
+  border: none;
+  margin-bottom: -10px;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.completed {
+  font-style: italic;
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+input[type="checkbox"] {
+  transform: scale(1.4);
+  accent-color: blue;
+  margin: auto 0;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clear-all-completed {
+  display: flex;
+  justify-content: center;
+}
+
+.clear-all-completed button {
+  background-color: blue;
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 10px;
+  margin: 50px auto;
+  padding: 10px;
+}
+
+.empty-list {
+  text-align: center;
+  font-size: 25px;
+  padding: 50px;
 }
