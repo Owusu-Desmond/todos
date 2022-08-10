@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Todolist from '../components/todoList';
 
 const TodoApp = () => {
@@ -21,7 +22,7 @@ const TodoApp = () => {
 
   const handleChange = (e) => {
     setTodo({
-      id: newTodos.length,
+      id: uuidv4(),
       task: e.target.value,
       completed: false,
     });
@@ -30,7 +31,7 @@ const TodoApp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setNewTodos([...newTodos, todo]);
-    setTodo({ id: newTodos.length, task: '', completed: false });
+    setTodo({ ...todo, task: '' });
   };
 
   // set a todo to completed
