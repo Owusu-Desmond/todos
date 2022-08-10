@@ -22,15 +22,11 @@ const TodoItem = ({
 
   // save edited todo on blur event and prevent enter key from getting triggered
   const saveEditedTask = (e) => {
-    if (e.key) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        setEditMode(false);
-        updateEdited(currentTodo);
-      }
-    } else {
+    updateEdited(currentTodo);
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      e.target.blur();
       setEditMode(false);
-      updateEdited(currentTodo);
     }
   };
   // return the todo item
@@ -41,12 +37,14 @@ const TodoItem = ({
         <textarea
           title="Click to edit"
           className={`${todo.completed === true ? 'completed' : ''}`}
-          onBlur={saveEditedTask}
-          onKeyPress={saveEditedTask}
+          onKeyUp={saveEditedTask}
+          onKeyDown={saveEditedTask}
+          onBlur={() => setEditMode(false)}
           onChange={(e) => setCurrentTodo({ ...currentTodo, task: e.target.value })}
           value={currentTodo.task}
           spellCheck={editMode}
           onClick={handleEditingMode}
+          placeholder="What needs to be done?"
         />
       </div>
       <button type="button" className="delete-btn" onClick={() => deleteTask(todo.id)}>&times;</button>

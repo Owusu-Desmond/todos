@@ -4,7 +4,7 @@ import TodoItem from './todoItem';
 
 const Todolist = ({
   newTodos, handleCompleted, deleteTask, clearAllCompleted,
-  savedTodos, updateTodos,
+  savedTodos, updateTodos, deleteAllTodos,
 }) => (
   <div className="todo-list">
     {!newTodos.length ? <div className="empty-list">You have no tasks to do.</div>
@@ -19,8 +19,9 @@ const Todolist = ({
         />
       ))}
     { newTodos.length ? (
-      <div className="clear-all-completed">
-        <button type="button" onClick={clearAllCompleted}>Clear completed</button>
+      <div className="delete-complete-btn-container">
+        <button type="button" className="clear-completed-btn" onClick={clearAllCompleted}>Clear completed</button>
+        <button type="button" className="delete-all-btn" onClick={deleteAllTodos}>Delete All</button>
       </div>
     ) : '' }
   </div>
@@ -34,6 +35,7 @@ Todolist.propTypes = {
   clearAllCompleted: PropTypes.func.isRequired,
   savedTodos: PropTypes.func.isRequired,
   updateTodos: PropTypes.func.isRequired,
+  deleteAllTodos: PropTypes.func.isRequired,
 };
 
 export default Todolist;
