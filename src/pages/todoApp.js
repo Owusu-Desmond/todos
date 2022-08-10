@@ -51,6 +51,10 @@ const TodoApp = () => {
     setNewTodos(newTodos.filter((todo) => todo.completed === false));
   };
 
+  const deleteAllTodos = () => {
+    setNewTodos([]);
+  };
+
   // delete a todo from the list
   const deleteTask = (todoId) => {
     setNewTodos(newTodos.filter((todo) => todo.id !== todoId));
@@ -70,6 +74,7 @@ const TodoApp = () => {
           clearAllCompleted={clearAllCompleted}
           savedTodos={savedTodos}
           updateTodos={updateTodos}
+          deleteAllTodos={deleteAllTodos}
         />
       </div>
     </section>
