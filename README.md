@@ -1,4 +1,4 @@
-# todos
+# Todos
 
  Todos is an application that help users to add and list tasks they need to complete or things that they want to do.
 
@@ -13,6 +13,11 @@
 
 - Libraries
   - [x] React
+  
+## Screenshot 
+
+https://user-images.githubusercontent.com/92303891/183912415-6cc28981-75b9-47c6-b6f9-b4ad50147e8c.mp4
+
 
 ## Live Demo Link
 
