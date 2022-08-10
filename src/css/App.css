@@ -5,17 +5,63 @@
 }
 
 .App-content {
-  padding: 50px 5%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  min-height: 100vh;
+  height: auto;
+  grid-gap: 20px;
   font-family: 'Poppins', sans-serif;
+}
+
+aside {
+  background-color: #b9b3b3;
+  padding-left: 10px;
+}
+
+.side-nav-list {
+  list-style-type: none;
+  display: block;
+  margin-top: 100px;
+  margin-left: 30px;
+  padding: 0;
+}
+
+.side-nav-item {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: blue;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.side-nav-item a {
+  text-decoration: none;
+}
+
+.active {
+  color: rgb(16, 16, 236);
+  border-bottom: 2px solid grey;
+}
+
+section {
+  padding-top: 50px;
 }
 
 .App-title {
   text-align: center;
+  font-size: 30px;
 }
 
-.todo-content {
+.todo-content,
+.App-description {
   width: 80%;
   margin: auto auto;
+}
+
+.App-description {
+  margin-top: 50px;
 }
 
 form {
@@ -57,6 +103,7 @@ textarea {
   font-size: 23px;
   font-weight: 500;
   height: 30px;
+  width: 100%;
   padding: 0 20px 0 10px;
   background-color: lightgray;
   border: none;
@@ -76,7 +123,7 @@ textarea:focus {
 
 input[type="checkbox"] {
   transform: scale(1.4);
-  accent-color: blue;
+  accent-color: blue; /* stylelint-disable-line */ /* Unknown property `accent-color`  which is not true */
   margin: auto 0;
 }
 
@@ -89,23 +136,67 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-.clear-all-completed {
+.delete-complete-btn-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-.clear-all-completed button {
-  background-color: blue;
+.delete-complete-btn-container button {
   color: white;
   border: none;
   font-size: 20px;
   border-radius: 10px;
-  margin: 50px auto;
+  margin: 30px auto;
   padding: 10px;
+  cursor: pointer;
+}
+
+.clear-completed-btn {
+  background-color: blue;
+}
+
+.delete-all-btn {
+  background-color: red;
 }
 
 .empty-list {
   text-align: center;
-  font-size: 25px;
+  font-size: 30px;
   padding: 50px;
+}
+
+footer {
+  background-color: #1b1a1a;
+  padding: 20px;
+  color: white;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .App-content {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    height: 50px;
+  }
+
+  section {
+    padding-top: 0;
+  }
+
+  .side-nav-list {
+    list-style-type: none;
+    display: block;
+    margin-top: 0;
+  }
+
+  .side-nav-item {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
 }
