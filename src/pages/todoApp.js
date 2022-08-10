@@ -22,7 +22,7 @@ const TodoApp = () => {
   const handleChange = (e) => {
     setTodo({
       id: newTodos.length,
-      task: e.target.value.trim(),
+      task: e.target.value,
       completed: false,
     });
   };
