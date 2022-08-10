@@ -85,13 +85,21 @@ form input:focus {
 }
 
 .todo-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
   background-color: rgb(211, 206, 206);
   justify-content: space-between;
   padding: 10px;
   align-items: center;
   align-self: center;
   border-bottom: 2px solid gray;
+}
+
+.checkbox-task {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .todo-list {
@@ -122,9 +130,14 @@ textarea:focus {
 }
 
 input[type="checkbox"] {
-  transform: scale(1.4);
+  transform: scale(1.5);
   accent-color: blue; /* stylelint-disable-line */ /* Unknown property `accent-color`  which is not true */
   margin: auto 0;
+}
+
+.delete-todo-btn-container {
+  display: flex;
+  justify-content: end;
 }
 
 .delete-btn {
@@ -132,6 +145,7 @@ input[type="checkbox"] {
   color: white;
   font-size: 25px;
   border: none;
+  max-width: 30px;
   border-radius: 5px;
   cursor: pointer;
 }

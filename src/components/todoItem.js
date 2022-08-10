@@ -47,7 +47,9 @@ const TodoItem = ({
           placeholder="What needs to be done?"
         />
       </div>
-      <button type="button" className="delete-btn" onClick={() => deleteTask(todo.id)}>&times;</button>
+      <div className="delete-todo-btn-container">
+        <button type="button" className="delete-btn" onClick={() => deleteTask(todo.id)}>&times;</button>
+      </div>
     </div>
   );
 };

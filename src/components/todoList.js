@@ -29,7 +29,11 @@ const Todolist = ({
 
 // set propTypes validation for Todolist
 Todolist.propTypes = {
-  newTodos: PropTypes.arrayOf(PropTypes.object).isRequired,
+  newTodos: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    task: PropTypes.string.isRequired,
+    completed: PropTypes.bool.isRequired,
+  })).isRequired,
   handleCompleted: PropTypes.func.isRequired,
   deleteTask: PropTypes.func.isRequired,
   clearAllCompleted: PropTypes.func.isRequired,
