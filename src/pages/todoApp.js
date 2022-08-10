@@ -64,7 +64,8 @@ const TodoApp = () => {
       <h1 className="App-title">Todos</h1>
       <div className="todo-content">
         <form onSubmit={handleSubmit}>
-          <input className="App-input" type="text" value={todo.task} onChange={handleChange} placeholder="What needs to be done?" required />
+          <input className="form-input" type="text" value={todo.task} onChange={handleChange} placeholder="What needs to be done?" required />
+          <button className="form-submit" type="submit">ADD</button>
         </form>
         {' '}
         <Todolist
