@@ -91,6 +91,7 @@ form {
   border: none;
   color: rgb(224, 218, 218);
   font-weight: 600;
+  cursor: pointer;
 }
 
 .todo-item {

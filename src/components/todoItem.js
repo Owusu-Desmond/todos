@@ -57,7 +57,7 @@ const TodoItem = ({
 // set prop validation for the component
 TodoItem.propTypes = {
   todo: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     task: PropTypes.string.isRequired,
     completed: PropTypes.bool.isRequired,
   }).isRequired,

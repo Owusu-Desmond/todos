@@ -30,7 +30,7 @@ const Todolist = ({
 // set propTypes validation for Todolist
 Todolist.propTypes = {
   newTodos: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     task: PropTypes.string.isRequired,
     completed: PropTypes.bool.isRequired,
   })).isRequired,
